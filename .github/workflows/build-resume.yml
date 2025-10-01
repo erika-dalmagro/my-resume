@@ -1,0 +1,33 @@
+name: Build Resume PDF
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository to VM
+        uses: actions/checkout@v4
+
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
+
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Convert Markdown to PDF
+        run: |
+          pandoc en_resume.md \
+            -o resume.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:"top=2cm, bottom=2cm, left=2cm, right=2cm" \
+            -V mainfont="DejaVu Sans"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Resume-Erika-Dal-Magro
+          path: Erika-Dal-Magro.pdf
