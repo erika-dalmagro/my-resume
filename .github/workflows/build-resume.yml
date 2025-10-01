@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Resume-Erika-Dal-Magro
-          path: Erika-Dal-Magro.pdf
+          path: resume.pdf
