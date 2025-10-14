@@ -24,7 +24,7 @@ jobs:
             -o resume.pdf \
             --pdf-engine=xelatex \
             -V geometry:"top=2cm, bottom=2cm, left=2cm, right=2cm" \
-            -V mainfont="DejaVu Sans"
+            -V mainfont="Arial"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
