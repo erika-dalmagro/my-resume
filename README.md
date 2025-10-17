@@ -1,4 +1,33 @@
-# Currículo Markdown para PDF
+# 🇺🇸 Markdown to PDF Resume  
+
+This repository contains my resume written in Markdown, available in both Portuguese and English
+
+## Automatic PDF Generation
+
+Every time a change is pushed to the `main` branch, a GitHub Action generates the PDF version of the resume from the `en_resume.md` file. For the Portuguese version, use the `pt_resume.md` file.
+
+The process uses Pandoc and TinyTeX to convert the `.md` file into a `.pdf`. The final file is available for download in the repository's "Actions" tab as a build artifact.
+
+## How to Generate the PDF Locally
+
+To generate the PDF locally, you must have Pandoc and a LaTeX distribution (like TinyTeX, MiKTeX, or TeX Live) installed.
+
+Then, run in your terminal:
+
+**For the Portuguese version:**
+
+```bash
+pandoc pt_resume.md -o resume_pt.pdf --pdf-engine=xelatex -V geometry:"top=2cm, bottom=2cm, left=2cm, right=2cm" -V mainfont="Arial"
+```  
+
+**For the English version:**
+
+```bash
+pandoc en_resume.md -o resume_en.pdf --pdf-engine=xelatex -V geometry:"top=2cm, bottom=2cm, left=2cm, right=2cm" -V mainfont="Arial"
+```
+---
+
+# 🇧🇷 Currículo Markdown para PDF
 
 Este repositório contém meu currículo escrito em Markdown, disponível tanto em português quanto em inglês.
 
